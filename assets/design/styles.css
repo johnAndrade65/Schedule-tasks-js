@@ -1,0 +1,55 @@
+/*FONT IMPORT*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700&display=swap');
+
+/*ESTILIZAÇÃO GERAL*/
+*{
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+/*CORPO*/
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+/*CABEÇALHO*/
+.header{
+    height: 15vh;
+    width: 100vw;
+    background-color: rgb(0, 89, 255);
+    border-bottom: 1px solid rgb(0, 119, 255);
+    display: flex;
+    align-items: flex-end;
+}
+.header h1{
+    color: #fff;
+    font-size: 55px;
+    padding: 1px 15px;
+}
+
+/*DISPLAY TASKS*/
+.display-tasks{
+    height: 85vh;
+    width: 100vw;
+    background-color: antiquewhite;
+}
+.button-add{
+    color: #fff;
+    font-size: 50px;
+    text-align: center;
+    padding: 2px 20px;
+    background-color: rgb(0, 89, 255);
+    border-radius: 5px;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    transition: all 0.2s ease-in-out;
+}
+.button-add:hover{
+    background-color: rgb(0, 119, 255);
+    padding: 3px 21px;
+    cursor: pointer;
+}
