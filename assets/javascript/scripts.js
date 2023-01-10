@@ -21,7 +21,7 @@ btn.addEventListener('click', () => {
 
 /*VARIAVEIS*/
 let btnRemove = document.querySelector('.remove');
-//AINDA EM CONSTRUÇÃO PARA FUTURAS UPDATES <3
+//FUNCTION REMOVE AINDA EM CONSTRUÇÃO PARA FUTURAS UPDATES <3
 
 /*btnRemove.addEventListener('click', () => {
     clone.parentNode.removeChild();
