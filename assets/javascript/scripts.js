@@ -1,1 +1,1 @@
-let HelloWorld = 'Ainda em fase de desenvolvimento..';
+let HelloWorld = 'Ainda em construção, aguarde! kk';
