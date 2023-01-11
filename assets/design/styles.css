@@ -49,6 +49,7 @@ body{
     align-items: center;
     justify-content: center;
     position: absolute;
+    top: 160px;
     border-radius: 5px;
     box-shadow: 10px 5px 25px rgb(80, 80, 80);
     padding: 15px 0 35px 0;
