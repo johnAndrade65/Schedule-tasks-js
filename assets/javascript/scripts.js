@@ -25,11 +25,9 @@ btnSave.addEventListener("click", () => {
 //Pegar valor do input e textearea, transformar em elemento HTML e renderizar
 function renderTasks() {
     const newTaskTitle = tittleTask.value;
-    tasks.push(newTaskTitle);
     tittleTask.value = ""; 
 
     const newTaskDescription = descriptionTask.value;
-    tasks.push(newTaskDescription);
     descriptionTask.value = "";
     
     //Renderizar tarefas
