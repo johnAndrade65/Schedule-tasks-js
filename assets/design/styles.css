@@ -40,7 +40,7 @@ body{
 }
 .tasks-list{
     height: auto;
-    width: 98vw;
+    width: 90vw;
     background-color: antiquewhite;
     border: 1px rgb(248, 230, 208) solid;
     border-radius: 5px;
@@ -71,8 +71,9 @@ body{
     background-color: antiquewhite;
     padding: 1px 0 5px 15px;
     overflow-y: hidden;
+    resize: none;
 }
-.tasks-list .remove{
+.tasks-list .remove-btn{
     height: 50px;
     width: 50px;
     border-radius: 50%;
@@ -83,7 +84,7 @@ body{
     position: relative;
     right: 15px;
 }
-.tasks-list .remove img{
+.tasks-list .remove-btn img{
     height: 50px;
     width: 50px;
     border-radius: 50%;
