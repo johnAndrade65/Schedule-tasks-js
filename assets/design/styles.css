@@ -20,7 +20,7 @@ body{
     height: 15vh;
     width: 100vw;
     background-color: rgb(0, 89, 255);
-    border-bottom: 1px solid rgb(0, 119, 255);
+    border-bottom: 2px solid rgb(0, 119, 255);
     display: flex;
     align-items: flex-end;
 }
@@ -28,6 +28,7 @@ body{
     color: #fff;
     font-size: 55px;
     padding: 1px 15px;
+    margin: 10px 0 10px 0;
 }
 
 /*DISPLAY TASKS*/
@@ -37,66 +38,87 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
 }
-.tasks-list{
+/*DISPLAY ADD TASKS*/
+.tasks-add{
     height: auto;
-    width: 90vw;
-    background-color: antiquewhite;
-    border: 1px rgb(248, 230, 208) solid;
+    width: 80vw;
+    background-color: rgb(233, 236, 241);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
     border-radius: 5px;
-    margin: 10px;
+    box-shadow: 10px 5px 25px rgb(80, 80, 80);
+    padding: 15px 0 35px 0;
 }
-.task{
+.tasks-add form{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.task-form{
-    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
+    gap: 15px;
 }
-.task .h3{
-    width: 90vw;
-    font-size: 23px;
-    padding: 5px 0 0 5px;
-    background-color: antiquewhite;
+.tasks-add form .h3{
+    color: rgb(0, 119, 255);
+    font-size: 30px;
+}
+.tasks-add form #title{
+    font-size: 15px;
+    padding: 10px;
+    height: 50px;
+    width: 700px;
+}
+.tasks-add form #description{
+    font-size: 15px;
+    padding: 10px;
+    min-height: 160px;
+    height: 160px;
+    max-height: 350px;
+    min-width: 700px;
+    max-width: 700px;
+    resize: auto;
 }
 :focus{
     outline: none;
 }
-.task .p{
-    color: rgb(71, 71, 71);
-    width: 90vw;
-    font-style: italic;
-    background-color: antiquewhite;
-    padding: 1px 0 5px 15px;
-    overflow-y: hidden;
-    resize: none;
-}
-.tasks-list .remove-btn{
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.tasks-add #save-task{
+    color: #fff;
+    font-size: 20px;
+    background-color: rgb(0, 89, 255);
+    padding: 10px 15px;
+    border-radius: 5px;
     position: relative;
-    right: 15px;
-}
-.tasks-list .remove-btn img{
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-}
-.task .date{
-    background-color: antiquewhite;
-    width: 145px;
-    padding-left: 5px;
+    top: 115px;
+    left: 20px;
 }
 
+/*DISPLAY TASKS LIST*/
+.tasks-show-list{ 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    display: flex;
+}
+.task{
+    display: flex;
+}
+.task-lists{
+    height: auto;
+    width: 95vw;
+    padding: 5px 5px 5px 5px;
+    color: rgb(0, 89, 255);
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+}
+
+
 /*BUTTON ADD*/
-.button-add{
+.more-task{
     color: #fff;
     font-size: 50px;
     text-align: center;
@@ -109,8 +131,78 @@ body{
     transition: all 0.2s ease-in-out;
     z-index: 1;
 }
-.button-add:hover{
+.more-task:hover{
     background-color: rgb(0, 119, 255);
     padding: 3px 21px;
     cursor: pointer;
 }
+
+/*RESPONSIVIDADE*/
+@media screen and (max-width: 1050px) {
+    .tasks-add form #title{
+        padding: 10px;
+        height: 50px;
+        width: 500px;
+    }
+    .tasks-add form #description{
+        min-width: 500px;
+        max-width: 500px;
+        resize: none;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .tasks-add form #title{
+        padding: 10px;
+        height: 50px;
+        width: 400px;
+    }
+    .tasks-add form #description{
+        min-width: 400px;
+        max-width: 400px;
+        resize: none;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .tasks-add form #title{
+        padding: 10px;
+        height: 50px;
+        width: 300px;
+    }
+    .tasks-add form #description{
+        min-width: 300px;
+        max-width: 300px;
+        resize: none;
+    }
+  }
+  @media screen and (max-width: 560px) {
+    .tasks-add{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        border-radius: 5px;
+        padding: 15px 0 75px 0;
+        box-shadow: 10px 5px 25px rgb(80, 80, 80);
+    }
+    .tasks-add form #title{
+        padding: 10px;
+        height: 50px;
+        width: 200px;
+    }
+    .tasks-add form #description{
+        min-width: 200px;
+        max-width: 200px;
+        resize: none;
+    }
+    .tasks-add #save-task{
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        border-radius: 5px;
+        position: absolute;
+        right: auto;
+        left: auto;
+        top: 315px;
+    }
+  }

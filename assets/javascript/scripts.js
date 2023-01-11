@@ -1,29 +1,39 @@
-//VARIAVEIS
-let btn = document.querySelector('.button-add');
-let task = document.querySelector('.tasks-list');
-let description = document.querySelector('.p')
+//Variaveis DOM
+let tasks = [];
 
-btn.addEventListener('click', () => {
-    //QUANDO O BOTÃO FOR CLICADO CHAMARA A ARROW FUCNTION QUE IRÁ CRIAR UMA "TASK" OU "TAREFA" COM VALORES LIMPOS.
-    let clone = task.cloneNode(true)
-    let body = document.querySelector('.display-tasks')
-    body.appendChild(clone)
+//Variaveis DOM
+let tasksShow = document.getElementsByClassName('task-lists');
+let tittleTask = document.getElementById('title');
+let descriptionTask = document.getElementById('description');
+let btnSave = document.getElementById('save-task');
 
+let btnMoreTask = document.querySelector('#more-task');
+let displayTaskAdd = document.getElementById('tasks-add');
 
-    //VARIAVEIS QUE SELECIONAM ELEMENTOS PARA CRIAR UM CLONE SEM VALORES NO TíTULO E DESCRIÇÃO.
-    let title = document.querySelector('.h3')
-    let date = document.querySelector('.date')
-
-    title.value = ''
-    description.value = ''
-    date.value = ''
+//Botão aciona tela de adicionar tasks
+btnMoreTask.addEventListener('click', () => {
+    displayTaskAdd.style.display = 'flex'
+    btnMoreTask.style.display = 'none'
 });
 
-//FUNCÃO PARA DAR UM AUTO RESIZE NO PARAGRAFO DA DESCRIÇÃO DA TAREFA(ainda em fase de testes!)
-description.addEventListener('input', adjustHeight);
+//Botão salvar Tarefa e fechar tela de adicionar task
+btnSave.addEventListener("click", () => {
+    displayTaskAdd.style.display = 'none'
+    btnMoreTask.style.display = 'flex'
 
-function adjustHeight() {
-    let content = this.value;
-    const lines = content.split("\n").length;
-    this.rows = lines;
+    const newTaskTitle = tittleTask.value;
+    tasks.push(newTaskTitle);
+    tittleTask.value = "";
+    
+    renderTasks();
+});
+
+//Render tarefa
+function renderTasks() {
+    tasksShow.innerHTML = "";
+    tasks.forEach(task => {
+        const taskElement = document.createElement("li");
+        taskElement.innerHTML = task;
+        tasksShow.appendChild(taskElement);
+    });
 }

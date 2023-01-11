@@ -22,17 +22,25 @@
     <!--=CONTENT=-->
     <article>
         <section>
+            <!--=DISPLAY DE TASKS=-->
             <div class="display-tasks">
-                <div class="tasks-list" id="tasks">
-                    <form class="task">
-                        <div class="task-form">
-                            <input type="text" name="" class="h3" placeholder="Tittle">
-                            <textarea name="" class="p" cols="30" rows="4" placeholder="Description"></textarea>
-                            <input type="date" name="" id="" class="date">
-                        </div>    
+                <!--=TELA DE CRIAR TAREFAS=-->
+                <div class="tasks-add" id="tasks-add">
+                    <form action="">
+                        <h3 class="h3">Add Tasks</h3>
+                        <input type="text" name="" id="title" placeholder="Name task">
+                        <textarea name="" id="description" cols="30" rows="10" placeholder="description"></textarea>
                     </form>
+                    <button id="save-task">Save</button>
                 </div>
-                <button class="button-add">+</button>
+
+                <!--=TELA MOSTRAR AS TAREFAS=-->
+                <div class="tasks-show-list" id="tasks">
+                    <ul class="task-lists">Teste</ul>  
+                    <ul class="task-lists">Teste</ul>  
+                </div>
+                <!--=CRIAR TAREFAS=-->
+                <button class="more-task" id="more-task">+</button>
             </div>
         </section>
     </article>
