@@ -100,22 +100,26 @@ body{
 .tasks-show-list{ 
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    border-radius: 5px;
     margin: 10px 0;
-    display: flex;
-}
-.task{
-    display: flex;
 }
 .task-lists{
-    height: auto;
-    width: 95vw;
-    padding: 5px 5px 5px 5px;
-    color: rgb(0, 89, 255);
-    background-color: antiquewhite;
     display: flex;
     flex-direction: column;
+    gap: 15px;
+    width: 95vw;
+}
+.task-lists li{
+    height: auto;
+    margin: 0;
+}
+.task-lists .li-title{
+    color: rgb(0, 89, 255);
+    font-weight: 600;
+    font-size: 25px;
+}
+.task-lists .li-description{
+    color: rgb(44, 44, 44);
+    font-size: 20px;
 }
 
 

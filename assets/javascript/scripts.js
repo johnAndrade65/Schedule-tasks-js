@@ -2,7 +2,7 @@
 let tasks = [];
 
 //Variaveis DOM
-let tasksShow = document.getElementsByClassName('task-lists');
+let tasksShow = document.getElementById('task-lists');
 let tittleTask = document.getElementById('title');
 let descriptionTask = document.getElementById('description');
 let btnSave = document.getElementById('save-task');
@@ -21,19 +21,25 @@ btnSave.addEventListener("click", () => {
     displayTaskAdd.style.display = 'none'
     btnMoreTask.style.display = 'flex'
 
-    const newTaskTitle = tittleTask.value;
-    tasks.push(newTaskTitle);
-    tittleTask.value = "";
-    
+    //Chama a function para renderizar as tarefas
     renderTasks();
 });
 
-//Render tarefa
+//Pegar valor do input e textearea, transformar em elemento HTML e renderizar
 function renderTasks() {
-    tasksShow.innerHTML = "";
-    tasks.forEach(task => {
-        const taskElement = document.createElement("li");
-        taskElement.innerHTML = task;
-        tasksShow.appendChild(taskElement);
-    });
+    const newTaskTitle = tittleTask.value;
+    tasks.push(newTaskTitle);
+    tittleTask.value = ""; 
+
+    const newTaskDescription = descriptionTask.value;
+    tasks.push(newTaskDescription);
+    descriptionTask.value = "";
+    
+    //Renderizar tarefas
+    tasksShow.insertAdjacentHTML("beforeend", 
+    `<ul class="tasks-show-list">
+        <li class="li-title"> ${newTaskTitle} - Title</li>
+        <li class="li-description"> ${newTaskDescription}</li> 
+    </ul>`); 
+    
 }
