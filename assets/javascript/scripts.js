@@ -1,4 +1,4 @@
-//VARIAVEIS DOMtasksShow
+//VARIAVEIS DOM
 let tasksShow = document.getElementById('task-lists');
 let tittleTask = document.getElementById('title');
 let descriptionTask = document.getElementById('description');
