@@ -92,6 +92,7 @@ body{
     position: relative;
     top: 115px;
     left: 20px;
+    cursor: pointer;
 }
 
 /*DISPLAY TASKS LIST*/
