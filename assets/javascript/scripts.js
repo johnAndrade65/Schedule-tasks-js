@@ -1,6 +1,3 @@
-//Variaveis
-let tasks = [];
-
 //Variaveis DOM
 let tasksShow = document.getElementById('task-lists');
 let tittleTask = document.getElementById('title');
