@@ -1,4 +1,4 @@
-//Variaveis DOM
+//Variaveis
 let tasks = [];
 
 //Variaveis DOM
