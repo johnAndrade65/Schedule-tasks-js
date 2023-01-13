@@ -1,16 +1,23 @@
 //VARIAVEIS DOM
-let tasksShow = document.getElementById('task-lists');
+let taskList = document.getElementById('task-lists');
+let containerLists = document.getElementById('tasks-container');
 let tittleTask = document.getElementById('title');
 let descriptionTask = document.getElementById('description');
 let btnSave = document.getElementById('save-task');
 
 let btnMoreTask = document.querySelector('#more-task');
 let displayTaskAdd = document.getElementById('tasks-add');
+let btnClear = document.getElementById('btn-remove');
 
 //BOTÃO CHAMA TELA DE ADICIONAR TAREFAS
 btnMoreTask.addEventListener('click', () => {
     displayTaskAdd.style.display = 'flex'
     btnMoreTask.style.display = 'none'
+});
+
+//BOTÃO CHAMA LIMPAR LISTA DE TAREFAS
+btnClear.addEventListener('click', () => {
+    taskList.innerHTML = '';
 });
 
 //BOTÃO SALVA A TAREFA E FECHA A TELA DE ADICIONAR TAREFAS
@@ -25,16 +32,15 @@ btnSave.addEventListener("click", () => {
 //PEGA O VALOR DO INPUT E TEXTAREA, TRASNFERE A ELEMENTOS "<li>" HTML E ENVIA PARA SER RENDERIZADA
 function renderTasks() {
     const newTaskTitle = tittleTask.value;
-    tittleTask.value = ""; 
+    tittleTask.value = "";
 
     const newTaskDescription = descriptionTask.value;
     descriptionTask.value = "";
-    
+
     //RENDERIZAR AS TAREFAS
-    tasksShow.insertAdjacentHTML("beforeend", 
-    `<ul class="tasks-show-list">
-        <li class="li-title"> ${newTaskTitle} - Title</li>
-        <li class="li-description"> ${newTaskDescription}</li> 
-    </ul>`); 
-    
+    taskList.insertAdjacentHTML("beforeend",
+        `<ul class="task-lists">
+            <li class="li-title"> ${newTaskTitle} - Title</li>
+            <li class="li-description"> ${newTaskDescription}</li> 
+        </ul>`);
 }

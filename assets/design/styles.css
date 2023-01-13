@@ -101,12 +101,15 @@ body{
     display: flex;
     flex-direction: column;
     margin: 10px 0;
+    gap: 5px;
 }
 .task-lists{
+    width: 95vw;
+    background-color: rgb(233, 236, 241);
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    width: 95vw;
+    gap: 10px;
+    border-radius: 5px;
 }
 .task-lists li{
     height: auto;
@@ -116,13 +119,13 @@ body{
     color: rgb(0, 89, 255);
     font-weight: 600;
     font-size: 25px;
+    padding-left: 5px;
 }
 .task-lists .li-description{
     color: rgb(44, 44, 44);
     font-size: 20px;
+    padding-left: 15px;
 }
-
-
 /*BUTTON ADD*/
 .more-task{
     color: #fff;
@@ -140,6 +143,14 @@ body{
 .more-task:hover{
     background-color: rgb(0, 119, 255);
     padding: 3px 21px;
+    cursor: pointer;
+}
+
+#btn-remove{
+    height: 35px;
+    width: 100vw;
+    color: red;
+    background-color: rgb(233, 236, 241);;
     cursor: pointer;
 }
 
