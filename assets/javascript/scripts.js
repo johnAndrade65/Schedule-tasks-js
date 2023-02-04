@@ -7,17 +7,14 @@ let btnSave = document.getElementById('save-task');
 
 let btnMoreTask = document.querySelector('#more-task');
 let displayTaskAdd = document.getElementById('tasks-add');
-let btnClear = document.getElementById('btn-remove');
+let btnRemove = document.getElementById('btn-remove');
+
+let taskId = 0;
 
 //BOTÃO CHAMA TELA DE ADICIONAR TAREFAS
 btnMoreTask.addEventListener('click', () => {
     displayTaskAdd.style.display = 'flex'
     btnMoreTask.style.display = 'none'
-});
-
-//BOTÃO CHAMA LIMPAR LISTA DE TAREFAS
-btnClear.addEventListener('click', () => {
-    taskList.innerHTML = '';
 });
 
 //BOTÃO SALVA A TAREFA E FECHA A TELA DE ADICIONAR TAREFAS
@@ -39,8 +36,16 @@ function renderTasks() {
 
     //RENDERIZAR AS TAREFAS
     taskList.insertAdjacentHTML("beforeend",
-        `<ul class="task-lists">
-            <li class="li-title"> ${newTaskTitle} - Title</li>
-            <li class="li-description"> ${newTaskDescription}</li> 
-        </ul>`);
+        `<div class="tasks-show-list" data-task-id="${taskId}">
+        <ul class="task-lists">
+          <li class="li-title"> ${newTaskTitle} - Title</li>
+          <li class="li-description"> ${newTaskDescription}</li> 
+        </ul>
+        <button id="btn-remove" onClick="removeTask(this)">Remove</button>
+      </div>`);
+      taskId++;
 }
+
+function removeTask(el) {
+    el.closest(".tasks-show-list").remove();
+  }
