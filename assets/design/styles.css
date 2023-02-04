@@ -153,6 +153,7 @@ body {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    border-radius: 4px;
     z-index: 0;
 }
 

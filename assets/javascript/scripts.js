@@ -9,6 +9,7 @@ let btnMoreTask = document.querySelector('#more-task');
 let displayTaskAdd = document.getElementById('tasks-add');
 let btnRemove = document.getElementById('btn-remove');
 
+//VARIABLES
 let taskId = 0;
 
 //BOTÃO CHAMA TELA DE ADICIONAR TAREFAS
@@ -46,6 +47,7 @@ function renderTasks() {
       taskId++;
 }
 
+//FUNCTION REMOVE TASKS
 function removeTask(el) {
     el.closest(".tasks-show-list").remove();
   }
